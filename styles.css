@@ -7,7 +7,8 @@
     background-color: #571a9c;
     text-decoration: underline;
     float: top;
-    margin:auto;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 #table
@@ -16,8 +17,9 @@
     margin-left: auto;
     margin-right: auto;
     font-size: 5em;
-    border-style: 5px solid thick;
-    border-color: #eb34c9;
+    border-style: inset;
+    border-width: 10px;
+    border-color: #baa411;
 }
 
 .table_headings
@@ -28,7 +30,6 @@
     background-color: #966726;
     padding-left: 10px;
     padding-right: 10px;
-
 }
 
 .node_names
@@ -44,6 +45,6 @@
     text-align: center;
     float: center;
     color: #ffffff;
-    background-color: #686970;
+    background-color: #5ad1f2;
 }
 

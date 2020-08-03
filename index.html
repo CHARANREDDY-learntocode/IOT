@@ -2,8 +2,32 @@
 <html>
 <head>
     <title>Smart Inter-Connection of Village Water Resources For Agriculture</title>
-    <link rel="icon" href="logo.ico">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script type="text/javascript" src="paho-mqtt.js"></script>
+    <script type="text/javascript">
+        var client = new Paho.Client("broker.hivemq.com",8000,"charanreddy2000");
+        var nodes=["TEST/NODE1","TEST/NODE2","TEST/NODE3","TEST/FLOW1","TEST/FLOW2","TEST/FLOW3"];
+        var node=0;
+
+        client.connect(
+        {
+            onSuccess:function()
+            {
+                console.log("connected");
+                while(node<6)
+                 {
+                    client.subscribe(nodes[node]);
+                    console.log("connected to "+nodes[node]);
+                    node=node+1;
+                }
+            }
+        });
+    client.onMessageArrived = function(message){
+    console.log(message.destinationName +": "+message.payloadString);
+    document.getElementById(message.destinationName).innerHTML = message.payloadString;
+}
+    </script>
 </head>
 <body>
 
@@ -18,25 +42,23 @@
         <th class="table_headings">Flow Rate</th>
         <tr class="row">
             <td class="node_names">Node-1</td>
-            <td class="data">10</td>
-            <td class="data">20</td>
+            <td class="data" id="TEST/NODE1">10</td>
+            <td class="data" id="TEST/NODE2">20</td>
         </tr>
 
         <tr class="row">
             <td class="node_names">Node-2</td>
-            <td class="data">30</td>
-            <td class="data">40</td>
+            <td class="data" id="TEST/NODE3">30</td>
+            <td class="data" id="TEST/FLOW1">40</td>
         </tr>
 
         <tr class="row">
             <td class="node_names">Node-3</td>
-            <td class="data">50</td>
-            <td class="data">60</td>
+            <td class="data" id="TEST/FLOW2">50</td>
+            <td class="data" id="TEST/FLOW3">60</td>
         </tr>
 
     </table>
 </section>
-
-
 </body>
 </html>
