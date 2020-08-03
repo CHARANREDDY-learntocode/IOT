@@ -1,9 +1,49 @@
 #heading
 {
     text-align: center;
-    padding: 5px 0px 5px 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     color: #d6e3af;
     background-color: #571a9c;
     text-decoration: underline;
     float: top;
+    margin:auto;
 }
+
+#table
+{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 5em;
+    border-style: 5px solid thick;
+    border-color: #eb34c9;
+}
+
+.table_headings
+{
+    text-align: center;
+    float: center;
+    color: #ffffff;
+    background-color: #966726;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.node_names
+{
+    text-align: center;
+    float: center;
+    color: #ffffff;
+    background-color: #2366a6;
+}
+
+.data
+{
+    text-align: center;
+    float: center;
+    color: #ffffff;
+    background-color: #686970;
+}
+
