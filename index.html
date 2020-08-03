@@ -21,7 +21,8 @@
                     console.log("connected to "+nodes[node]);
                     node=node+1;
                 }
-            }
+            },
+            useSSL: true
         });
     client.onMessageArrived = function(message){
     console.log(message.destinationName +": "+message.payloadString);
@@ -42,20 +43,20 @@
         <th class="table_headings">Flow Rate</th>
         <tr class="row">
             <td class="node_names">Node-1</td>
-            <td class="data" id="TEST/NODE1">10</td>
-            <td class="data" id="TEST/NODE2">20</td>
+            <td class="data" id="TEST/NODE1">...</td>
+            <td class="data" id="TEST/FLOW1">...</td>
         </tr>
 
         <tr class="row">
             <td class="node_names">Node-2</td>
-            <td class="data" id="TEST/NODE3">30</td>
-            <td class="data" id="TEST/FLOW1">40</td>
+            <td class="data" id="TEST/NODE2">...</td>
+            <td class="data" id="TEST/FLOW2">...</td>
         </tr>
 
         <tr class="row">
             <td class="node_names">Node-3</td>
-            <td class="data" id="TEST/FLOW2">50</td>
-            <td class="data" id="TEST/FLOW3">60</td>
+            <td class="data" id="TEST/NODE3">...</td>
+            <td class="data" id="TEST/FLOW3">...</td>
         </tr>
 
     </table>
