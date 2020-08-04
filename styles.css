@@ -13,9 +13,10 @@
 
 #table
 {
-    margin-top: 20px;
+    margin-top: auto;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: auto;
     font-size: 5em;
     border-style: inset;
     border-width: 10px;
